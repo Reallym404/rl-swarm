@@ -15,6 +15,8 @@ def extract_xml_identity(text: str) -> str:
 
 
 def extract_xml_ids(text: str) -> str:
+    if not text or "<student>" not in text:
+        return []
     ids = []
     ids_raw = text.split("<student>")[1:]
     for id in ids_raw:
